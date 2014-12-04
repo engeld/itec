@@ -61,7 +61,6 @@ nav a:hover, nav a:focus {
   color: #49968e;
 }
 
-
 article {
   width: 80%;
   padding-right: 10%;
@@ -71,6 +70,8 @@ article {
 
 footer {
   width: 100%;
+  padding-top: 5em;
+  padding-bottom: 1em;
   clear: both;
 
   text-align: center;
@@ -82,6 +83,7 @@ footer {
 h1, h2 {
   padding: 0 10%;
   margin: 0;
+  
   color: #FFFFFF;
   font-weight: normal;
 }
@@ -102,8 +104,7 @@ h2 {
   padding-bottom: 0.5em;
   border-top: none;
   
-  /* color: rgba( 255,255,255,0.6); */
-  color: blue;
+  color: #325050;
   font-family: 'Julius Sans One', sans-serif;
   font-size: 2em;
   font-style: italic;
@@ -127,10 +128,14 @@ p {
   line-height: 2;
 }
 
-#itecCanvas {
+#itec-canvas {
   width: 75%;
   margin: 5% auto;
   display: table;
 
   border: 1px solid black;
+}
+
+#itec-form {
+  display: inline-block;
 }
