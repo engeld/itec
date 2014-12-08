@@ -1,0 +1,141 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #FFFFFF;
+  
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 70%;
+  text-align: left;
+  color: #325050;
+}
+
+header {
+  width: 100%;
+  margin: 0px auto;
+
+  background-color: red;
+  display: table;
+  text-align: center;
+}
+
+nav {
+  width: 14%;
+  height: 100%;
+  float: left;
+  display: table;
+  
+  background-color: #edf4f0;
+}
+
+nav ul {
+  padding: 10%;
+  list-style: none outside none;
+  overflow: hidden;
+}
+
+nav li {
+  margin: 15%;
+  float: left;
+  
+  color: #c0cac3;
+  font-style: italic;
+  font-weight: bold;
+}
+
+nav a {
+  color: #607476;
+}
+
+nav a:hover, nav a:focus {
+  color: #49968e;
+}
+
+article {
+  width: 80%;
+  padding-right: 10%;
+  float: right;
+  display: table;
+}
+
+footer {
+  width: 100%;
+  padding-top: 5em;
+  padding-bottom: 1em;
+  clear: both;
+
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  font-weight: bold;
+}
+
+h1, h2 {
+  padding: 0 10%;
+  margin: 0;
+  
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+h1 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: none;
+  
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 3.2em;
+  text-transform: uppercase;
+}
+
+h2 {
+  display: block;
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+  border-top: none;
+  
+  color: #325050;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 2em;
+  font-style: italic;
+}
+
+h2:before {
+  content: " ";
+}
+
+h3 {
+  margin: 2em 0 0 0;
+  color: #2e484c;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.8em;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0.75em 0;
+  line-height: 2;
+}
+
+#itec-canvas {
+  width: 75%;
+  margin: 5% auto;
+  display: table;
+
+  border: 1px solid black;
+}
+
+#itec-form {
+  display: inline-block;
+}
