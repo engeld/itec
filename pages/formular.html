@@ -19,7 +19,7 @@
         <li><a href="./ajax.html">Ajax-Spielerei</a></li>
         <li><a href="./style-switcher.html">Style-Switcher</a></li>
         <li>
-          <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fitec.engels.io%2F;verbose=1">
+          <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fitec.engels.io%2Fformular.html;verbose=1">
             <img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="34" height="34" alt="HTML5 Powered" title="HTML5 Powered">
           </a>
         </li>
@@ -29,21 +29,30 @@
     <article>
     <h2>Kontaktanfrage</h2>
     <p>Sie wollen Kontakt zu mir aufnehmen?</p>
+    <p>Ihre Kontaktanfrage muss folgende Vorgaben erfüllen:
+    <ul>
+      <li>Alle Felder müssen ausgefüllt sein</li>
+    </ul>
     <form id="itec-form" action="formular.html">
       <fieldset>
         <legend>Kontaktanfrage</legend>
-        <div id="itec-form-name">
+        <div id="itec-form-name" class="itec-form-elements">
           <label for="name">Ihr Name</label>
-          <input for="name" type="email" placeholder="Ihr Name" required>
+          <input for="name" type="text" placeholder="Dana Engel" required />
+        </div>
+        <div id="itec-form-mail" class="itec-form-elements">
+          <label for="mail">Ihre Mail-Adresse</label>
+          <input for="mail" type="e-mail" placeholder="example@stud.hslu.ch" required />
         </div>
         <br />
-        <div id="itec-form-message">
+        <div id="itec-form-message" class="itec-form-elements">
           <label for="message">Ihre Nachricht</label><br />
           <textarea for="message" cols="50" rows="10">Ihre Nachricht</textarea>
         </div>
         <br />
         <div id="itec-form-send">
           <input name="send" type="submit" value="Absenden">
+          <button onclick="alert('Test')">ASD</button>
         </div>
       </fieldset>
     </form>
