@@ -27,53 +27,69 @@
     </nav>
 
     <article>
-    <h2>Kontaktanfrage</h2>
-    <p>Sie wollen Kontakt zu mir aufnehmen?</p>
-    <p>Ihre Kontaktanfrage muss folgende Vorgaben erfüllen:
-    <ul>
-      <li>Alle Felder müssen ausgefüllt sein</li>
-    </ul>
-    <form id="itec-form" action="formular.html">
+    <h2>Passwortvergleich</h2>
+    <p>Hier können Sie ein Passwort miteinander vergleichen</p>
+    <form id="itec-form" action="formular.html" novalidate>
       <fieldset>
-        <legend>Kontaktanfrage</legend>
-        <div id="itec-form-name" class="itec-form-elements">
-          <label for="name">Ihr Name</label>
-          <input for="name" type="text" placeholder="Dana Engel" required />
-        </div>
-        <div id="itec-form-mail" class="itec-form-elements">
-          <label for="mail">Ihre Mail-Adresse</label>
-          <input for="mail" type="e-mail" placeholder="example@stud.hslu.ch" required />
-        </div>
-        <div id="itec-form-mail-confirmation" class="itec-form-elements">
-          <label for="mail">Bestätigen Sie bitte Ihre Mail-Adresse</label>
-          <input for="mail" type="e-mail" placeholder="example@stud.hslu.ch" required />
-        <br />
-        <div id="itec-form-message" class="itec-form-elements">
-          <label for="message">Ihre Nachricht</label><br />
-          <textarea for="message" cols="50" rows="10">Ihre Nachricht</textarea>
-        </div>
+        <legend>Passwortvergleich</legend>
+	<div>
+	  <label for="password1">Wählen Sie ein Passwort</label>
+	  <input type="password" required id="itec-input-password" />
+	</div>
+	<div>
+	  <label for="password2">Bestätigen Sie Ihr Password</label>
+	  <input type="password" required id="itec-input-password2" />
+	</div>
+	<p class="error"></p>
+	<p class="message"></p>
         <br />
         <div id="itec-form-send">
           <input name="send" type="submit" value="Absenden" onlclick="alert('ASD')">
         </div>
       </fieldset>
     </form>
+    <script>
+    var password1 = document.getElementById('itec-input-password');
+    var password2 = document.getElementById('itec-input-password2');
+    var form = document.getElementById('itec-form');
+
+    var checkPasswordValidity = function() {
+        if (password1.value != password2.value) {
+            password1.setCustomValidity('Passwörter sind NICHT gleich.');
+            updateErrorMessage();
+	    updateMessage("");
+        } else {
+            password1.setCustomValidity('');
+	    updateErrorMessage();
+	    updateMessage("Passwörter sind gleich");
+        }        
+    };
+
+   var updateErrorMessage = function() {
+        form.getElementsByClassName('error')[0].innerHTML = password1.validationMessage;
+    };
+
+   var updateMessage = function(message) {
+        form.getElementsByClassName('message')[0].innerHTML = message;
+    };
+
+    password1.addEventListener('change', checkPasswordValidity, false);
+    password2.addEventListener('change', checkPasswordValidity, false);
+
+    form.addEventListener('submit', function(event) {
+        checkPasswordValidity();
+        if (!this.checkValidity()) {
+            event.preventDefault();
+	    updateErrorMessage();
+            password1.focus();
+        } else {
+	   updateMessage();
+	}
+    }, false);
+
+    </script
     </article>
 
     <footer>Wurde im Rahmen des ITEC-Modules der HSLU von Dana Engel erstellt.</footer>
   </body>
-  <script>
-    var elem = document.getElementById("itec-form-mail-confirmation");
-    elem.addEventListener( "blur", verifyEmail );
-
-    function verifyEmail( input ){
-      input = input.srcElement;
-      console.log( "input element: " + input );
-      if( input.value != document.getElementById( "itec-form-mail" ).value){
-        input.setCustomValidity('The two email addresses must match.');
-      } else {
-        input.setCustomValidity("");
-      }
-    }
-  </script
 </html>
