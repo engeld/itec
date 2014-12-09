@@ -44,6 +44,9 @@
           <label for="mail">Ihre Mail-Adresse</label>
           <input for="mail" type="e-mail" placeholder="example@stud.hslu.ch" required />
         </div>
+        <div id="itec-form-mail-confirmation" class="itec-form-elements">
+          <label for="mail">Bestätigen Sie bitte Ihre Mail-Adresse</label>
+          <input for="mail" type="e-mail" placeholder="example@stud.hslu.ch" required />
         <br />
         <div id="itec-form-message" class="itec-form-elements">
           <label for="message">Ihre Nachricht</label><br />
@@ -51,8 +54,7 @@
         </div>
         <br />
         <div id="itec-form-send">
-          <input name="send" type="submit" value="Absenden">
-          <button onclick="alert('Test')">ASD</button>
+          <input name="send" type="submit" value="Absenden" onlclick="alert('ASD')">
         </div>
       </fieldset>
     </form>
@@ -60,4 +62,18 @@
 
     <footer>Wurde im Rahmen des ITEC-Modules der HSLU von Dana Engel erstellt.</footer>
   </body>
+  <script>
+    var elem = document.getElementById("itec-form-mail-confirmation");
+    elem.addEventListener( "blur", verifyEmail );
+
+    function verifyEmail( input ){
+      input = input.srcElement;
+      console.log( "input element: " + input );
+      if( input.value != document.getElementById( "itec-form-mail" ).value){
+        input.setCustomValidity('The two email addresses must match.');
+      } else {
+        input.setCustomValidity("");
+      }
+    }
+  </script
 </html>
